@@ -1,6 +1,5 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
 
 # Define question and answer packets
 bullying_questions = [
@@ -133,13 +132,85 @@ discipline_answers = [
     "Good behavior includes respecting others, following instructions, and being honest."
 ]
 
+# Case studies for data science
+case_studies_questions = {
+    "house_price_prediction": [
+        "Who needs to know house price predictions?",
+        "What factors influence house prices?",
+        "Where can data about house prices be found?",
+        "Why is predicting house prices important?"
+    ],
+    "student_performance_prediction": [
+        "Who benefits from predicting student performance?",
+        "What factors influence student performance?",
+        "Where can data about student performance be found?",
+        "Why is predicting student performance important?"
+    ],
+    "library_book_recommendation": [
+        "Who benefits from book recommendations?",
+        "What factors influence book recommendations?",
+        "Where can data about reading preferences be found?",
+        "Why are book recommendations important?"
+    ],
+    "school_event_attendance": [
+        "Who benefits from predicting school event attendance?",
+        "What factors influence event attendance?",
+        "Where can data about past attendance be found?",
+        "Why is predicting event attendance important?"
+    ],
+    "cafeteria_food_wastage": [
+        "Who needs to know about food wastage predictions?",
+        "What factors influence food wastage?",
+        "Where can data about food wastage be found?",
+        "Why is predicting food wastage important?"
+    ]
+}
+
+case_studies_answers = {
+    "house_price_prediction": [
+        "Buyers, sellers, real estate agents",
+        "Number of rooms, area, location",
+        "Real estate websites, government databases",
+        "To make informed decisions in the real estate market"
+    ],
+    "student_performance_prediction": [
+        "Students, teachers, parents",
+        "Study hours, attendance, participation",
+        "School records, student surveys",
+        "To provide targeted support and improve educational outcomes"
+    ],
+    "library_book_recommendation": [
+        "Students, librarians",
+        "Past borrowings, reading interests, demographic information",
+        "Library records, student surveys",
+        "To enhance the reading experience and encourage reading"
+    ],
+    "school_event_attendance": [
+        "Event organizers, students, teachers",
+        "Event type, promotion methods, past attendance",
+        "School records, event feedback forms",
+        "To plan better and allocate resources effectively"
+    ],
+    "cafeteria_food_wastage": [
+        "Cafeteria managers, school administrators",
+        "Menu items, number of students, weather conditions",
+        "Cafeteria records, student surveys",
+        "To reduce waste and manage resources efficiently"
+    ]
+}
+
 # Aggregate all questions and answers
 question_packets = {
     "bullying": bullying_questions,
     "sports": sports_questions,
     "competitions": competitions_questions,
     "study_preparation": study_preparation_questions,
-    "discipline": discipline_questions
+    "discipline": discipline_questions,
+    "house_price_prediction": case_studies_questions["house_price_prediction"],
+    "student_performance_prediction": case_studies_questions["student_performance_prediction"],
+    "library_book_recommendation": case_studies_questions["library_book_recommendation"],
+    "school_event_attendance": case_studies_questions["school_event_attendance"],
+    "cafeteria_food_wastage": case_studies_questions["cafeteria_food_wastage"]
 }
 
 answer_packets = {
@@ -147,7 +218,12 @@ answer_packets = {
     "sports": sports_answers,
     "competitions": competitions_answers,
     "study_preparation": study_preparation_answers,
-    "discipline": discipline_answers
+    "discipline": discipline_answers,
+    "house_price_prediction": case_studies_answers["house_price_prediction"],
+    "student_performance_prediction": case_studies_answers["student_performance_prediction"],
+    "library_book_recommendation": case_studies_answers["library_book_recommendation"],
+    "school_event_attendance": case_studies_answers["school_event_attendance"],
+    "cafeteria_food_wastage": case_studies_answers["cafeteria_food_wastage"]
 }
 
 def preprocess_text(text):

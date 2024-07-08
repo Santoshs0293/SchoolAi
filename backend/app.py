@@ -23,7 +23,7 @@ from models.sentiment_analysis import sentiment_analysis
 from models.cnn import cnn_predict, initialize_cnn_model
 from models.nlp import process_text
 from models.tfidf_model import calculate_tfidf
-from models.problem_canvas import analyze_responses, question_packets
+from models.problem_canvas import analyze_responses, question_packets, answer_packets
 import logging
 from models.visualization import visualization_bp
 from models.species_identifier import predict_species
@@ -79,12 +79,8 @@ def problem_canvas():
         packet_name = data['packet_name']
         question_index = data['question_index']
         user_response = data['response']
-        
-        if packet_name not in question_packets:
-            return jsonify({"error": "Invalid packet name"}), 400
-        if question_index < 0 or question_index >= len(question_packets[packet_name]):
-            return jsonify({"error": "Invalid question index"}), 400
-        
+        if packet_name not in question_packets or question_index < 0 or question_index >= len(question_packets[packet_name]):
+            return jsonify({"error": "Invalid packet name or question index"}), 400
         result = analyze_responses(packet_name, question_index, user_response)
         return jsonify(result)
     except Exception as e:

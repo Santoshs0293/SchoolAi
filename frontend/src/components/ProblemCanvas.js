@@ -61,7 +61,60 @@ const questionPackets = {
     "Why is punctuality important in school?",
     "Who decides on the disciplinary actions for serious offenses?",
     "What are some examples of good behavior in school?"
+  ],
+  house_price_prediction: [
+    "Who needs to know house price predictions?",
+    "What factors influence house prices?",
+    "Where can data about house prices be found?",
+    "Why is predicting house prices important?"
+  ],
+  student_performance_prediction: [
+    "Who benefits from predicting student performance?",
+    "What factors influence student performance?",
+    "Where can data about student performance be found?",
+    "Why is predicting student performance important?"
+  ],
+  library_book_recommendation: [
+    "Who benefits from book recommendations?",
+    "What factors influence book recommendations?",
+    "Where can data about reading preferences be found?",
+    "Why are book recommendations important?"
+  ],
+  school_event_attendance: [
+    "Who benefits from predicting school event attendance?",
+    "What factors influence event attendance?",
+    "Where can data about past attendance be found?",
+    "Why is predicting event attendance important?"
+  ],
+  cafeteria_food_wastage: [
+    "Who needs to know about food wastage predictions?",
+    "What factors influence food wastage?",
+    "Where can data about food wastage be found?",
+    "Why is predicting food wastage important?"
   ]
+};
+
+const caseStudies = {
+  house_price_prediction: {
+    title: "House Price Prediction",
+    description: "This case study involves predicting house prices using various features such as the number of rooms, area, and location. Accurate house price predictions can help buyers, sellers, and real estate agents make informed decisions."
+  },
+  student_performance_prediction: {
+    title: "Student Performance Prediction",
+    description: "This case study involves predicting student performance using various features such as study hours, attendance, and participation. Accurate predictions can help teachers and parents support students more effectively."
+  },
+  library_book_recommendation: {
+    title: "Library Book Recommendation",
+    description: "This case study involves recommending books to students using various features such as past borrowings, reading interests, and demographic information. Accurate recommendations can enhance the reading experience for students."
+  },
+  school_event_attendance: {
+    title: "School Event Attendance",
+    description: "This case study involves predicting attendance for school events using various features such as event type, promotion methods, and past attendance. Accurate predictions can help in better planning and resource allocation."
+  },
+  cafeteria_food_wastage: {
+    title: "Cafeteria Food Wastage",
+    description: "This case study involves predicting food wastage in the school cafeteria using various features such as menu items, number of students, and weather conditions. Accurate predictions can help in reducing waste and managing resources better."
+  }
 };
 
 function ProblemCanvas() {
@@ -120,6 +173,12 @@ function ProblemCanvas() {
           </button>
         ))}
       </div>
+      {activePacket && caseStudies[activePacket] && (
+        <div style={styles.caseStudy}>
+          <h2>{caseStudies[activePacket].title}</h2>
+          <p>{caseStudies[activePacket].description}</p>
+        </div>
+      )}
       {activePacket && (
         <div style={styles.questionList}>
           {questionPackets[activePacket].map((q, index) => (
@@ -190,6 +249,10 @@ const styles = {
     border: 'none',
     borderRadius: '4px',
     cursor: 'pointer'
+  },
+  caseStudy: {
+    marginBottom: '20px',
+    textAlign: 'left'
   },
   questionList: {
     marginBottom: '20px'
