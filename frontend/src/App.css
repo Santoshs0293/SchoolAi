@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+  background-color: #007bff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #0056b3;
+}
+
+h1 {
+  color: #343a40;
+}
+
+form {
+  background-color: #fff;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+}
+
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+form input[type="file"],
+form input[type="number"],
+form input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.results {
+  background-color: #fff;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 90%;
+}
+
+.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+pre {
+  text-align: left;
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form,
+  .results {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (min-width: 1201px) {
+  nav ul li a {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.25rem;
+  }
+}
