@@ -6,3 +6,6 @@ scikit-learn
 matplotlib
 seaborn
 textblob
+tensorflow
+Pillow
+nltk
