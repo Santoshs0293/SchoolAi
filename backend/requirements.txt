@@ -8,4 +8,8 @@ seaborn
 textblob
 tensorflow
 Pillow
+<<<<<<< HEAD
 nltk
+=======
+nltk
+>>>>>>> 6db61355003b5de13598e10a083251c7be433a73
